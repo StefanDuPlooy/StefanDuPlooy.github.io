@@ -1,195 +1,396 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
-    <title>Virtual CV - Stefan du Plooy</title>
-  </head>
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 
-  <body>
-    <nav>
-      <div class="links">
-        <a href="#achievements-list">Achievements</a>
-        <a href="#about-me">About Me</a>
-        <a href="#portfolio">My Portfolio</a>
-      </div>
-    </nav>
+html {
+  scroll-behavior: smooth;
+}
 
-    <div class="about">
-      <div class="left">
-        <h3>BSc IT Student</h3>
-        <div class="info">
-          <h2>I'm Stefan du Plooy</h2>
-          <p>Java | C | C++ | C# | Python | Delphi</p>
-          <div class="buttons">
-            <a href="documents/cv.pdf">
-              <button class="pdf">Get CV <i class="far fa-file"></i></button>
-            </a>
-            <button id="copyEmailBtn" class="email">
-              Copy Email <i class="far fa-copy"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="right">
-        <a class="online" href="#"
-          ><i class="fas fa-circle"></i> Available For Job</a
-        >
-        <img src="assets/profile.png" />
-      </div>
-    </div>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
 
-    <div class="achievements">
-      <div class="left">
-        <h3><i class="fas fa-circle"></i> Achievements</h3>
-        <div class="achievements-list">
-          <div class="item">
-            <div div id="achievements-list" class="achievements-info">
-              <h5 class="active">2024 (Semester 1)</h5>
-              <ul>
-                <li>
-                  Distinctions for all (4) of my university modules of 2024
-                  Semester 1
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="item">
-            <div class="achievements-info">
-              <h5>2023</h5>
-              <ul>
-                <li>
-                  Distinctions for all (12) of my university modules of 2023
-                </li>
-                <li>
-                  Lab Assistant, employed by the university, for First Year User
-                  Interface Programming
-                </li>
-                <li>Golden Key Member</li>
-              </ul>
-            </div>
-          </div>
-          <div class="item">
-            <div class="achievements-info">
-              <h5>2022</h5>
-              <ul>
-                <li>
-                  Distinctions for all (10) of my university modules of 2022
-                </li>
-                <li>
-                  First Place Academic Achiever for Computer Science and
-                  Information Systems in the Potchefstroom Campus for First
-                  Year, First Semester
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="item">
-            <div class="achievements-info">
-              <h5>2021</h5>
-              <ul>
-                <li>Distinctions for all my subjects (7) on NSC</li>
-                <li>Academic Honors</li>
-                <li>Academic Top 20</li>
-                <li>Class Representative</li>
-                <li>
-                  Google Certification in The Fundamentals of Digital Marketing
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
+a {
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s ease;
+}
 
-      <div id="about-me" class="right">
-        <div class="item">
-          <a href="#">About Me</a>
-          <p>
-            I am a motivated and detail-oriented Information Technology student
-            currently going into my third year, set to graduate at the end of
-            2024 and pursue an honors program in 2025. I possess a strong
-            passion for computer science and information systems. I am actively
-            seeking opportunities to apply my technical skills in a dynamic and
-            collaborative environment. Currently, I am interested in building a
-            career in cyber security, machine learning, or software development.
-          </p>
-        </div>
+a:hover {
+  color: #bb86fc !important;
+}
 
-        <div class="item">
-          <a href="#">Problem Solving</a>
-          <p>
-            Resourceful in finding solutions through research and exploration.
-          </p>
-        </div>
-        <div class="item">
-          <a href="#">Adaptability</a>
-          <p>Open to adapting to new technologies and methodologies.</p>
-        </div>
-        <div class="item">
-          <a href="#">Communication</a>
-          <p>Ability to convey complex technical concepts in layman’s terms.</p>
-        </div>
-        <div class="item">
-          <a href="#">Teamwork</a>
-          <p>
-            Works effectively in team settings, contributing ideas and
-            supporting peers.
-          </p>
-        </div>
-      </div>
-    </div>
+body {
+  background-color: #171717;
+  padding: 20px;
+  animation: fadeInAnimation ease 2s;
+}
 
-    <footer>
-      <a href="#">My Portfolio</a>
-      <div id="portfolio" class="socials">
-        <a
-          href="https://github.com/StefanDuPlooy"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Github</a
-        >
-        <a
-          href="https://www.linkedin.com/in/stefan-du-plooy-96906b206"
-          target="_blank"
-          rel="noopener noreferrer"
-          >LinkedIn</a
-        >
-      </div>
-      <a class="online" href="#"
-        ><i class="fas fa-circle"></i> Available For Job</a
-      >
-    </footer>
+nav {
+  display: flex;
+  gap: 20px;
+}
 
-    <script>
-      document
-        .getElementById("copyEmailBtn")
-        .addEventListener("click", function () {
-          // The email address you want to copy
-          var email = "stefanduplooy3@gmail.com";
+nav .links {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 66px;
+  background-color: #18181b;
+  border: 1px solid #27272a;
+  border-radius: 48px;
+}
 
-          // Create a temporary input element
-          var tempInput = document.createElement("input");
-          tempInput.value = email;
-          document.body.appendChild(tempInput);
+nav .links a {
+  font-size: 20px;
+}
 
-          // Select the email address
-          tempInput.select();
-          tempInput.setSelectionRange(0, 99999); // For mobile devices
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 42px;
+  background: #18181b;
+  border: 1px solid #27272a;
+  margin-top: 20px;
+  border-radius: 14px;
+}
 
-          // Copy the email address
-          document.execCommand("copy");
+.about .left h3 {
+  color: #bdbdbd;
+  font-size: 24px;
+  font-weight: 400;
+}
 
-          // Remove the temporary element
-          document.body.removeChild(tempInput);
+.about .left .info {
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
-          // Optionally, provide some feedback to the user
-          alert("Email address copied to clipboard!");
-        });
-    </script>
-  </body>
-</html>
+.about .left .info h2 {
+  font-size: 36px;
+  color: #fff;
+  font-weight: 500;
+}
+
+.about .left .info p {
+  font-size: 20px;
+  color: #bdbdbd;
+}
+
+.about .left .info .buttons {
+  display: flex;
+  gap: 14px;
+}
+
+.about .left .info .buttons button {
+  font-size: 16px;
+  padding: 6px 10px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.about .left .info .buttons button.pdf {
+  color: #fff;
+  background: #bb86fc;
+  border: 1px solid #171717;
+}
+
+.about .left .info .buttons button.pdf:hover {
+  background: #bb86fc;
+}
+
+.about .left .info .buttons button.email {
+  color: #bdbdbd;
+  border: 1px solid #27272a;
+  background: #171717;
+}
+
+.about .left .info .buttons button.email:hover {
+  background: #000;
+}
+
+.about .right a.online,
+footer a.online {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #171717;
+  border: 1px solid #27272a;
+  padding: 4px 15px;
+  border-radius: 14px;
+  font-size: 13px;
+}
+
+.about .right a.online i,
+footer a.online i {
+  color: #4caf50;
+  font-size: 9px;
+}
+
+.about .right img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 8px solid #2c2c2c;
+  object-fit: cover;
+  margin-top: 70px;
+}
+
+.achievements {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.achievements .left {
+  flex: 1;
+  background: #18181b;
+  padding: 60px 40px;
+  border-radius: 14px;
+  border: 1px solid #27272a;
+}
+
+.achievements .left h3 {
+  color: #bdbdbd;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 24px;
+}
+
+.achievements .left h3 i {
+  font-size: 8px;
+}
+
+.achievements .left h5 {
+  color: #bb86fc;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 24px;
+}
+
+.achievements .left h5 i {
+  font-size: 8px;
+}
+
+.achievements .left .achievements-list {
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.achievements .left .achievements-list .item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.achievements .left .achievements-list .item .achievement-info h5 {
+  color: #bb86fc;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.achievements .left .achievements-list .item ul {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+.achievements .left .achievements-list .item ul li {
+  color: #bdbdbd;
+  font-size: 18px;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.achievements .left .achievements-list .item ul li::before {
+  content: "•";
+  color: #bb86fc;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+  position: absolute;
+}
+
+.achievements .right {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 40% auto;
+  gap: 20px;
+}
+
+.achievements .right .item:first-child {
+  grid-column: span 2;
+}
+
+.achievements .right .item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+  background: #18181b;
+  border: 1px solid #27272a;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.achievements .right .item:hover a {
+  color: #bb86fc;
+}
+
+.achievements .right .item a {
+  font-size: 24px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.achievements .right .item > p {
+  color: #bdbdbd;
+  font-size: 17px;
+  line-height: 26px;
+}
+
+.achievements .right .item:not(:first-child) {
+  gap: 14px;
+}
+
+.achievements .right .item:not(:first-child) a {
+  font-size: 18px;
+}
+
+.achievements .right .item:not(:first-child) p {
+  font-size: 15px;
+}
+
+@media screen and (max-width: 1220px) {
+  .achievements {
+    flex-direction: column;
+  }
+
+  .achievements .left,
+  .achievements .right .item {
+    padding: 40px 30px;
+  }
+
+  .achievements .right {
+    grid-template-rows: auto auto;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .achievements .left .achievements-list {
+    margin-top: 40px;
+  }
+
+  .achievements .left .achievements-list .item .achievement-info h5,
+  .achievements .right .item a {
+    font-size: 20px;
+  }
+
+  .achievements .left .achievements-list .item ul li {
+    font-size: 16px;
+  }
+
+  .achievements .right .item > p,
+  .achievements .right .item:not(:first-child) a {
+    font-size: 15px;
+  }
+
+  .achievements .right .item:not(:first-child) p {
+    font-size: 13px;
+  }
+}
+
+footer {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #18181b;
+  border: 1px solid #27272a;
+  border-radius: 14px;
+  padding: 45px;
+}
+
+footer > a {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+footer .socials {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+footer .socials a {
+  font-size: 20px;
+  font-weight: 500;
+  color: #bdbdbd;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  nav .links {
+    padding: 0 40px;
+  }
+
+  footer > a {
+    font-size: 20px;
+  }
+
+  footer .socials a {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  nav .links a {
+    font-size: 14px;
+  }
+
+  .about {
+    flex-direction: column-reverse;
+    gap: 20px;
+    padding: 30px;
+  }
+
+  .about .left .info {
+    margin-top: 30px;
+  }
+
+  .about .right img {
+    margin-top: 20px;
+  }
+
+  footer a.online {
+    display: none;
+  }
+}
